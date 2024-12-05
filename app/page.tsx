@@ -1,215 +1,174 @@
-"use client";
+'use client' ;
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Table, TableBody, TableCell, TableHeader, TableHead, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
-import {
-  Mail,
-  User,
-  BookOpen,
-  VideoIcon,
-  DollarSign,
-  ArrowRight,
-} from "lucide-react";
-import Image from "next/image";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Users, LineChart, FileText, Package2, Package, HardDrive } from "lucide-react";
 
 const LandingPage = () => {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-light-green-100">
       <main className="flex-1">
-        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-gradient-to-r from-blue-500 to-purple-600 text-white">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12">
+        <section className="w-full py-12 md:py-24 lg:py-32">
+          <div className="container px-4 md:px-6">
+            <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
               <div className="flex flex-col justify-center space-y-4">
                 <div className="space-y-2">
-                  <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl">
-                    Revolutionize Your Learning Experience
+                  <h1 className="text-4xl font-bold tracking-tighter sm:text-6xl xl:text-7xl/none">
+                    Elevate Your Project Management
                   </h1>
-                  <p className="max-w-xl md:text-xl">
-                    Our platform brings tutors and students together for an
-                    interactive and immersive educational journey.
+                  <p className="max-w-[600px] text-muted-foreground md:text-xl">
+                    Manage projects efficiently with our comprehensive tracking tools and integrations.
                   </p>
                 </div>
-                <div className="flex flex-col gap-2 sm:flex-row">
-                  <Button className="bg-white text-blue-600 hover:bg-gray-200">
+                <div className="flex flex-col gap-2 min-[400px]:flex-row">
+                  <Button className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-white shadow transition-colors hover:bg-primary/90">
                     Get Started
                   </Button>
-                  <Button
-                    variant="outline"
-                    className="text-white border-white hover:bg-white hover:text-blue-600"
-                  >
+                  <Button className="inline-flex h-10 items-center justify-center rounded-md border border-primary bg-white px-8 text-sm font-medium text-primary shadow-sm transition-colors hover:bg-primary/20">
                     Learn More
                   </Button>
                 </div>
               </div>
-              <Image
+              <img
                 src="https://picsum.photos/seed/picsum/200/300"
-                alt="Learning"
-                width={400}
-                height={600}
-                className="mx-auto w-full rounded-xl lg:order-last"
+                width="550"
+                height="550"
+                alt="Project Management"
+                className="mx-auto aspect-video overflow-hidden rounded-xl object-bottom sm:w-full lg:order-last lg:aspect-square"
               />
             </div>
           </div>
         </section>
-
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-white">
-          <div className="container mx-auto px-4 md:px-6">
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-light-green-200">
+          <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                Core Features
-              </h2>
-              <p className="max-w-xl md:text-lg">
-                Explore the powerful features designed to enhance the
-                educational experience for both tutors and students.
-              </p>
-            </div>
-            <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 py-12">
-              <Card>
-                <CardHeader>
-                  <User className="h-12 w-12 mx-auto text-blue-600" />
-                  <CardTitle>User Authentication</CardTitle>
-                  <CardDescription>
-                    Email and Password Login/Signup
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p>
-                    Secure accounts for students and tutors with essential login
-                    and signup capabilities.
-                  </p>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <BookOpen className="h-12 w-12 mx-auto text-blue-600" />
-                  <CardTitle>Course Management</CardTitle>
-                  <CardDescription>Create and View Courses</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p>
-                    Tutors can create and manage their courses with flexible
-                    scheduling and detailed descriptions.
-                  </p>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <VideoIcon className="h-12 w-12 mx-auto text-blue-600" />
-                  <CardTitle>Zoom Link Access</CardTitle>
-                  <CardDescription>Controlled Access</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p>
-                    Secure Zoom access ensures only enrolled students can join
-                    the class sessions.
-                  </p>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <DollarSign className="h-12 w-12 mx-auto text-blue-600" />
-                  <CardTitle>Payment Processing</CardTitle>
-                  <CardDescription>Secure Transactions</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p>
-                    Integrated payment solutions ensure seamless and secure
-                    transactions for course enrollments.
-                  </p>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <User className="h-12 w-12 mx-auto text-blue-600" />
-                  <CardTitle>Student Dashboard</CardTitle>
-                  <CardDescription>Enrolled Courses Overview</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p>
-                    A personalized dashboard for students to monitor and access
-                    their enrolled courses easily.
-                  </p>
-                </CardContent>
-              </Card>
+              <div className="space-y-2">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Core Features</h2>
+                <p className="max-w-[900px] text-muted-foreground md:text-xl">
+                  Our tool offers a range of features to streamline your project management process.
+                </p>
+              </div>
+              <div className="grid max-w-5xl grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
+                <Card className="flex flex-col items-center space-y-4 p-6">
+                  <Package2 className="h-12 w-12" />
+                  <div className="text-center">
+                    <CardTitle className="text-lg font-bold">Project Creation</CardTitle>
+                    <p className="text-muted-foreground">Admins can effortlessly create and manage projects.</p>
+                  </div>
+                </Card>
+                <Card className="flex flex-col items-center space-y-4 p-6">
+                  <FileText className="h-12 w-12" />
+                  <div className="text-center">
+                    <CardTitle className="text-lg font-bold">Detailed Timesheets</CardTitle>
+                    <p className="text-muted-foreground">Generate comprehensive reports for team and project activities.</p>
+                  </div>
+                </Card>
+                <Card className="flex flex-col items-center space-y-4 p-6">
+                  <HardDrive className="h-12 w-12" />
+                  <div className="text-center">
+                    <CardTitle className="text-lg font-bold">Jira Integration</CardTitle>
+                    <p className="text-muted-foreground">Seamlessly connect with Jira for better task management.</p>
+                  </div>
+                </Card>
+              </div>
             </div>
           </div>
         </section>
-
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100">
-          <div className="container mx-auto px-4 md:px-6">
+        <section className="w-full py-12 md:py-24 lg:py-32">
+          <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                Frequently Asked Questions
-              </h2>
-              <p className="max-w-xl md:text-lg">
-                Find answers to common questions and learn more about our
-                platform’s capabilities.
-              </p>
-            </div>
-            <div className="mx-auto max-w-3xl py-12">
-              <Accordion type="single" collapsible>
-                <AccordionItem value="item-1">
-                  <AccordionTrigger>
-                    How do I sign up as a tutor?
-                  </AccordionTrigger>
+              <div className="space-y-2">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">How It Works</h2>
+                <p className="max-w-[900px] text-muted-foreground md:text-xl">
+                  Effortlessly track every aspect of your projects with our powerful tools.
+                </p>
+              </div>
+              <Accordion type="single" collapsible className="w-full max-w-4xl mt-8">
+                <AccordionItem value="project-creation">
+                  <AccordionTrigger className="text-xl font-semibold">Project Creation</AccordionTrigger>
                   <AccordionContent>
-                    Tutors can sign up using their email and password and start
-                    creating courses immediately.
+                    Admins can create projects with predefined subtasks and codes, allowing for easy task tracking.
                   </AccordionContent>
                 </AccordionItem>
-                <AccordionItem value="item-2">
-                  <AccordionTrigger>
-                    How can students enroll in courses?
-                  </AccordionTrigger>
+                <AccordionItem value="timesheets">
+                  <AccordionTrigger className="text-xl font-semibold">Generate Timesheets</AccordionTrigger>
                   <AccordionContent>
-                    Students can browse available courses and enroll by
-                    proceeding to the payment page.
+                    Generate detailed timesheets for teams and projects, helping you keep track of time spent efficiently.
                   </AccordionContent>
                 </AccordionItem>
-                <AccordionItem value="item-3">
-                  <AccordionTrigger>
-                    What payment methods are supported?
-                  </AccordionTrigger>
+                <AccordionItem value="jira-integration">
+                  <AccordionTrigger className="text-xl font-semibold">Jira Integration</AccordionTrigger>
                   <AccordionContent>
-                    We support various payment methods to ensure a smooth
-                    enrollment experience for all users.
+                    Integrate with Jira to manage tasks seamlessly across platforms.
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
             </div>
           </div>
         </section>
-
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-white">
-          <div className="container mx-auto px-4 md:px-6">
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-light-green-200">
+          <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                Join Us Today
-              </h2>
-              <p className="max-w-xl md:text-lg">
-                Begin your journey with our innovative learning management
-                platform. Sign up now and explore endless learning
-                possibilities!
-              </p>
-              <Button className="bg-blue-600 text-white hover:bg-blue-700 px-6 py-3 text-lg">
-                Sign Up Now
-              </Button>
+              <div className="space-y-2">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Project Overview</h2>
+                <p className="max-w-[900px] text-muted-foreground md:text-xl">
+                  Get a snapshot of all ongoing projects and tasks.
+                </p>
+              </div>
+              <Table className="w-full mt-8">
+                <TableHeader>
+                  <TableRow>
+                    <TableHead>Project Name</TableHead>
+                    <TableHead>Subtask</TableHead>
+                    <TableHead>Status</TableHead>
+                    <TableHead className="text-right">Time Spent (hrs)</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  <TableRow>
+                    <TableCell className="font-medium">Project Alpha</TableCell>
+                    <TableCell>Requirement Gathering</TableCell>
+                    <TableCell>
+                      <Badge variant="outline" className="bg-green-300">In Progress</Badge>
+                    </TableCell>
+                    <TableCell className="text-right">12</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-medium">Project Beta</TableCell>
+                    <TableCell>UI Design</TableCell>
+                    <TableCell>
+                      <Badge variant="outline" className="bg-yellow-300">Pending</Badge>
+                    </TableCell>
+                    <TableCell className="text-right">5</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-medium">Project Gamma</TableCell>
+                    <TableCell>Coding</TableCell>
+                    <TableCell>
+                      <Badge variant="outline" className="bg-blue-300">Completed</Badge>
+                    </TableCell>
+                    <TableCell className="text-right">20</TableCell>
+                  </TableRow>
+                </TableBody>
+              </Table>
             </div>
           </div>
         </section>
       </main>
+      <footer className="bg-gray-100 p-6 md:py-12">
+        <div className="container flex justify-between text-sm">
+          <div>
+            <h3 className="font-semibold">Project Management Tool</h3>
+            <p>Track and manage projects efficiently.</p>
+          </div>
+          <div className="flex space-x-4">
+            <Button variant="outline">Contact Us</Button>
+            <Button variant="outline">Privacy Policy</Button>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
